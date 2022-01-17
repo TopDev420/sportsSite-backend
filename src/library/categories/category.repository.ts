@@ -5,9 +5,9 @@ import { CreateCategorytDTO } from '../dto/create-category.dto';
 @EntityRepository(Category)
 export class CategoryRepository extends Repository<Category> {
   public async createCategory(
-    createCategorytDto: CreateCategorytDTO,
+    createCategorytDTO: CreateCategorytDTO,
   ): Promise<Category> {
-    const { name, parentId, metadata } = createCategorytDto;
+    const { name, parentId, metadata } = createCategorytDTO;
 
     const category = new Category();
     category.name = name;
@@ -19,10 +19,10 @@ export class CategoryRepository extends Repository<Category> {
   }
 
   public async editCategory(
-    createCategorytDto: CreateCategorytDTO,
+    createCategorytDTO: CreateCategorytDTO,
     editedCategory: Category,
   ): Promise<Category> {
-    const { name, parentId, metadata } = createCategorytDto;
+    const { name, parentId, metadata } = createCategorytDTO;
 
     editedCategory.name = name;
     editedCategory.parentId = parentId;

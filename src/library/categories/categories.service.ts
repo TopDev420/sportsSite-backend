@@ -13,9 +13,9 @@ export class CategoriesService {
   ) {}
 
   public async createCategory(
-    createCategoryDto: CreateCategorytDTO,
+    createCategoryDTO: CreateCategorytDTO,
   ): Promise<Category> {
-    return await this.categoryRepository.createCategory(createCategoryDto);
+    return await this.categoryRepository.createCategory(createCategoryDTO);
   }
 
   public async getCategories(): Promise<Category[]> {
@@ -32,14 +32,14 @@ export class CategoriesService {
 
   public async editCategory(
     categoryId: number,
-    createCategoryDto: CreateCategorytDTO,
+    createCategoryDTO: CreateCategorytDTO,
   ): Promise<Category> {
     const editedCategory = await this.categoryRepository.findOne(categoryId);
     if (!editedCategory) {
       throw new NotFoundException('Category not found');
     }
     return this.categoryRepository.editCategory(
-      createCategoryDto,
+      createCategoryDTO,
       editedCategory,
     );
   }
