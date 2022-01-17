@@ -4,9 +4,9 @@ import { CreateEventDTO } from '../dto/create-event.dto';
 
 @EntityRepository(Event)
 export class EventRepository extends Repository<Event> {
-  public async createEvent(createEventtDTO: CreateEventDTO): Promise<Event> {
+  public async createEvent(createEventDTO: CreateEventDTO): Promise<Event> {
     const { name, categoryId, regionId, homeTeamId, awayTeamId, duration } =
-      createEventtDTO;
+      createEventDTO;
 
     const event = new Event();
     event.name = name;
@@ -21,11 +21,11 @@ export class EventRepository extends Repository<Event> {
   }
 
   public async editEvent(
-    createEventtDTO: CreateEventDTO,
+    createEventDTO: CreateEventDTO,
     editedEvent: Event,
   ): Promise<Event> {
     const { name, categoryId, regionId, homeTeamId, awayTeamId, duration } =
-      createEventtDTO;
+      createEventDTO;
 
     editedEvent.name = name;
     editedEvent.categoryId = categoryId;

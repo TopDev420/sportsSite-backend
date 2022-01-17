@@ -4,8 +4,8 @@ import { CreateTeamDTO } from '../dto/create-team.dto';
 
 @EntityRepository(Team)
 export class TeamRepository extends Repository<Team> {
-  public async createTeam(createTeamtDTO: CreateTeamDTO): Promise<Team> {
-    const { name, metadata } = createTeamtDTO;
+  public async createTeam(createTeamDTO: CreateTeamDTO): Promise<Team> {
+    const { name, metadata } = createTeamDTO;
 
     const team = new Team();
     team.name = name;
@@ -16,10 +16,10 @@ export class TeamRepository extends Repository<Team> {
   }
 
   public async editTeam(
-    createTeamtDTO: CreateTeamDTO,
+    createTeamDTO: CreateTeamDTO,
     editedTeam: Team,
   ): Promise<Team> {
-    const { name, metadata } = createTeamtDTO;
+    const { name, metadata } = createTeamDTO;
 
     editedTeam.name = name;
     editedTeam.metadata = metadata;

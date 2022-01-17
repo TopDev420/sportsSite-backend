@@ -12,8 +12,8 @@ export class TeamsService {
     private teamRepository: TeamRepository,
   ) {}
 
-  public async createTeam(createTeamtDTO: CreateTeamDTO): Promise<Team> {
-    return await this.teamRepository.createTeam(createTeamtDTO);
+  public async createTeam(createTeamDTO: CreateTeamDTO): Promise<Team> {
+    return await this.teamRepository.createTeam(createTeamDTO);
   }
 
   public async getTeams(): Promise<Team[]> {

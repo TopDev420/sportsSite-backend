@@ -21,6 +21,14 @@ import { CollectionsService } from './collections/collections.service';
 import { CollectionsController } from './collections/collections.controller';
 import { CollectionRepository } from './collections/collection.repository';
 
+import { ItemsController } from './items/items.controller';
+import { ItemsService } from './items/items.service';
+import { ItemRepository } from './items/item.repository';
+
+import { UsersService } from './users/users.service';
+import { UsersController } from './users/users.controller';
+import { UserRepository } from './users/user.repository';
+
 @Module({
   imports: [
     TypeOrmModule.forFeature([
@@ -28,6 +36,8 @@ import { CollectionRepository } from './collections/collection.repository';
       TeamRepository,
       EventRepository,
       CollectionRepository,
+      ItemRepository,
+      UserRepository,
     ]),
   ],
   providers: [
@@ -35,12 +45,16 @@ import { CollectionRepository } from './collections/collection.repository';
     TeamsService,
     EventsService,
     CollectionsService,
+    ItemsService,
+    UsersService,
   ],
   controllers: [
     CategoriesController,
     TeamsController,
     EventsController,
     CollectionsController,
+    ItemsController,
+    UsersController,
   ],
 })
 export class LibraryModule {}
