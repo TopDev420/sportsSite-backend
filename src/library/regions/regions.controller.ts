@@ -8,8 +8,8 @@ import {
   Delete,
 } from '@nestjs/common';
 import { RegionsService } from './regions.service';
-import { CreateRegionDTO } from '../dto/create-region.dto';
-import { Region } from '../entities/region.entity';
+import { CreateRegionDTO } from '../dto/create-regions.dto';
+import { Region } from '../entities/regions.entity';
 
 @Controller('regions')
 export class RegionsController {

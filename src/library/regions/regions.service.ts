@@ -1,8 +1,8 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 
-import { Region } from '../entities/region.entity';
-import { CreateRegionDTO } from '../dto/create-region.dto';
+import { Region } from '../entities/regions.entity';
+import { CreateRegionDTO } from '../dto/create-regions.dto';
 import { RegionRepository } from './region.repository';
 
 @Injectable()
